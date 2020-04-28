@@ -5,7 +5,7 @@ pipeline {
 		  steps{
               withMaven(maven : 'maven3.5')
 		      {
-			    sh 'mvn clean compile'
+			    bat 'mvn clean compile'
 			  }
 		  }
         }
@@ -13,7 +13,7 @@ pipeline {
 		  steps{
               withMaven(maven : 'maven3.5')
 		      {
-			    sh 'mvn test'
+			    bat 'mvn test'
 			  }
 		  }
         }
@@ -21,7 +21,7 @@ pipeline {
 		  steps{
               withMaven(maven : 'maven3.5')
 		      {
-			    sh 'mvn clean install -PautoInstallPackage'
+			    bat 'mvn clean install -PautoInstallPackage'
 			  }
 		  }
         }
