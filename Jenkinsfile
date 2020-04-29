@@ -17,7 +17,7 @@ pipeline {
 			  }
 		  }
         }
-		stage('deploy stage') {
+		stage('generate sonar report') {
 		  steps{
               withMaven(maven : 'maven3.5')
 		      {
