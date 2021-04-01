@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <parameter name="browser" value="chrome"/>
+  <test name="Mcd">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.Mcd.qa.TestCases.General_EnquireP"/>
+    </classes>
+  </test> <!-- Mcd -->
+  <test name="Mcd(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.Mcd.qa.TestCases.General_EnquireP">
+        <methods>
+          <include name="By_Selecting_Submit"/>
+          <include name="City"/>
+          <include name="setup"/>
+          <include name="Confirm_Email"/>
+          <include name="setExtent"/>
+          <include name="What_is_This_About"/>
+          <include name="Global_Error_Message"/>
+          <include name="General_Inqury"/>
+          <include name="Zip"/>
+          <include name="Email"/>
+          <include name="Address"/>
+          <include name="Frist_Name"/>
+          <include name="Pick_Different_Topic"/>
+          <include name="We_Want_to_Hear_From_You"/>
+          <include name="State"/>
+          <include name="phone_number"/>
+          <include name="AptSuite"/>
+          <include name="Positive_scenario"/>
+          <include name="Open_URL"/>
+          <include name="Last_Name"/>
+          <include name="Tell_Us_About_It"/>
+        </methods>
+      </class> <!-- com.Mcd.qa.TestCases.General_EnquireP -->
+    </classes>
+  </test> <!-- Mcd(failed) -->
+</suite> <!-- Failed suite [Suite] -->

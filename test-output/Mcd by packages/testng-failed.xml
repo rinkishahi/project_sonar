@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Mcd by packages]">
+  <test verbose="2" name="com.Mcd.qa.TestCases">
+    <packages>
+      <package name="com.Mcd.qa.TestCases"/>
+    </packages>
+    <classes>
+      <class name="com.Mcd.qa.TestCases.Genaral_enquire"/>
+      <class name="com.Mcd.qa.TestCases.General_EnquireP"/>
+      <class name="com.Mcd.qa.TestCases.Mobile_App_Feedback"/>
+      <class name="com.Mcd.qa.TestCases.Restaurant_feedback"/>
+    </classes>
+  </test> <!-- com.Mcd.qa.TestCases -->
+  <test name="com.Mcd.qa.TestCases(failed)">
+    <classes>
+      <class name="com.Mcd.qa.TestCases.Mobile_App_Feedback">
+        <methods>
+          <include name="By_Selecting_SubmitB"/>
+          <include name="What_was_your_takewayB"/>
+          <include name="Mobile_App_Version"/>
+          <include name="Mobile_App_Feedback_Label"/>
+          <include name="Phone_numberB"/>
+          <include name="TELL_US_ABOUT_IT"/>
+          <include name="LandmarkB"/>
+          <include name="List_View"/>
+          <include name="Visit_DateB"/>
+          <include name="MPick_Different_topic_Dropdown"/>
+          <include name="Open_URLB"/>
+          <include name="StateB"/>
+          <include name="Restaurant_AddrressB"/>
+          <include name="Restaurant_Locater"/>
+          <include name="If_Appropriate_Label"/>
+          <include name="Positive_scenario_Mobileapp"/>
+          <include name="First_NameB"/>
+          <include name="Enter_Your_Comments"/>
+          <include name="CityB"/>
+          <include name="How_can_we_help_you"/>
+          <include name="Day_and_yearB"/>
+          <include name="Visit_Time_AM_PMB"/>
+          <include name="Confirm_EmailB"/>
+          <include name="Cont_find_LocationB"/>
+          <include name="EmailB"/>
+          <include name="Mobile_Operating_System"/>
+          <include name="Last_NameB"/>
+          <include name="Global_Error_MessageB"/>
+        </methods>
+      </class> <!-- com.Mcd.qa.TestCases.Mobile_App_Feedback -->
+      <class name="com.Mcd.qa.TestCases.General_EnquireP">
+        <methods>
+          <include name="By_Selecting_Submit"/>
+          <include name="City"/>
+          <include name="Confirm_Email"/>
+          <include name="What_is_This_About"/>
+          <include name="General_Inqury"/>
+          <include name="Zip"/>
+          <include name="Email"/>
+          <include name="Address"/>
+          <include name="Frist_Name"/>
+          <include name="Pick_Different_Topic"/>
+          <include name="We_Want_to_Hear_From_You"/>
+          <include name="State"/>
+          <include name="phone_number"/>
+          <include name="AptSuite"/>
+          <include name="Positive_scenario"/>
+          <include name="Open_URL"/>
+          <include name="Last_Name"/>
+          <include name="Tell_Us_About_It"/>
+        </methods>
+      </class> <!-- com.Mcd.qa.TestCases.General_EnquireP -->
+      <class name="com.Mcd.qa.TestCases.Restaurant_feedback">
+        <methods>
+          <include name="Indicate_Pleaseselect_Searchlabels"/>
+          <include name="First_name"/>
+          <include name="Pick_Different_topic_Dropdown"/>
+          <include name="City"/>
+          <include name="what_was_you_takeaway_preference"/>
+          <include name="Global_Error_Message"/>
+          <include name="visit_time_AM_PM"/>
+          <include name="Vist_date_month"/>
+          <include name="Restaurant_Locator"/>
+          <include name="Open_URL"/>
+          <include name="Please_Indicate_Whether_You"/>
+          <include name="State"/>
+          <include name="By_Selecting_Submit"/>
+          <include name="Last_Name"/>
+          <include name="City_cont_find_location"/>
+          <include name="Popular_landmark_near_therestaurant"/>
+          <include name="State_cont_find"/>
+          <include name="Zip"/>
+          <include name="Email"/>
+          <include name="List_view"/>
+          <include name="Apt_Suite"/>
+          <include name="Address_USonly"/>
+          <include name="Confirm_Email"/>
+          <include name="Positive_scenario"/>
+          <include name="cant_find_the_location"/>
+          <include name="Phone_Number"/>
+          <include name="Restaurant_address"/>
+          <include name="Restaurantlabel_image"/>
+          <include name="Give_us_your_feedback"/>
+          <include name="Day_and_Year"/>
+        </methods>
+      </class> <!-- com.Mcd.qa.TestCases.Restaurant_feedback -->
+      <class name="com.Mcd.qa.TestCases.Genaral_enquire">
+        <methods>
+          <include name="first_name"/>
+          <include name="setExtent"/>
+          <include name="generalEnquirey"/>
+          <include name="Genaral_havlabel"/>
+          <include name="pickdifftopick"/>
+        </methods>
+      </class> <!-- com.Mcd.qa.TestCases.Genaral_enquire -->
+    </classes>
+  </test> <!-- com.Mcd.qa.TestCases(failed) -->
+</suite> <!-- Failed suite [Mcd by packages] -->

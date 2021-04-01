@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="MCD">
+	<test name="Mcd" allow-return-values="true">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.Mcd.qa.TestCases.Restaurant_feedback">
+			</class>
+			<class name="com.Mcd.qa.TestCases.General_EnquireP">
+			</class>
+			<class name="com.Mcd.qa.TestCases.Mobile_App_Feedback">
+			</class>
+			<class name="com.Mcd.qa.TestCases.Franchising_Form">
+			</class>
+			<class name="com.Mcd.qa.TestCases.Trademark_Permission">
+			</class>
+			<class name="com.Mcd.qa.TestCases.CCPA_Rights_Center">
+			</class>
+			<class name="com.Mcd.qa.TestCases.old_restaurant_feedback">
+			</class>
+		</classes>
+	</test>
+</suite>

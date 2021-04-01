@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+  <reporter-output>
+  </reporter-output>
+  <suite name="MCD" duration-ms="502354" started-at="2021-03-26T04:52:18Z" finished-at="2021-03-26T05:00:40Z">
+    <groups>
+    </groups>
+    <test name="Mcd" duration-ms="502354" started-at="2021-03-26T04:52:18Z" finished-at="2021-03-26T05:00:40Z">
+      <class name="com.Mcd.qa.TestCases.Positive_Scenarios_All_Forms">
+        <test-method status="PASS" signature="setExtent()[pri:0, instance:com.Mcd.qa.TestCases.Positive_Scenarios_All_Forms@10c46382]" name="setExtent" is-config="true" duration-ms="200" started-at="2021-03-26T04:52:18Z" finished-at="2021-03-26T04:52:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setExtent -->
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.Mcd.qa.TestCases.Positive_Scenarios_All_Forms@10c46382]" name="setup" is-config="true" duration-ms="6637" started-at="2021-03-26T04:52:18Z" finished-at="2021-03-26T04:52:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="Restaurant_Feedback_Positive_scenario()[pri:1, instance:com.Mcd.qa.TestCases.Positive_Scenarios_All_Forms@10c46382]" name="Restaurant_Feedback_Positive_scenario" duration-ms="103801" started-at="2021-03-26T04:52:25Z" finished-at="2021-03-26T04:54:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Restaurant_Feedback_Positive_scenario -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.Mcd.qa.TestCases.Positive_Scenarios_All_Forms@10c46382]" name="tearDown" is-config="true" duration-ms="1" started-at="2021-03-26T04:54:09Z" finished-at="2021-03-26T04:54:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Restaurant_Feedback_Positive_scenario status=SUCCESS method=Positive_Scenarios_All_Forms.Restaurant_Feedback_Positive_scenario()[pri:1, instance:com.Mcd.qa.TestCases.Positive_Scenarios_All_Forms@10c46382] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="General_Enquire_Positive_scenario()[pri:2, instance:com.Mcd.qa.TestCases.Positive_Scenarios_All_Forms@10c46382]" name="General_Enquire_Positive_scenario" duration-ms="58661" started-at="2021-03-26T04:54:09Z" finished-at="2021-03-26T04:55:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- General_Enquire_Positive_scenario -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.Mcd.qa.TestCases.Positive_Scenarios_All_Forms@10c46382]" name="tearDown" is-config="true" duration-ms="1" started-at="2021-03-26T04:55:07Z" finished-at="2021-03-26T04:55:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=General_Enquire_Positive_scenario status=SUCCESS method=Positive_Scenarios_All_Forms.General_Enquire_Positive_scenario()[pri:2, instance:com.Mcd.qa.TestCases.Positive_Scenarios_All_Forms@10c46382] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="Mobile_App_Feedback_Positive_scenario()[pri:3, instance:com.Mcd.qa.TestCases.Positive_Scenarios_All_Forms@10c46382]" name="Mobile_App_Feedback_Positive_scenario" duration-ms="82180" started-at="2021-03-26T04:55:07Z" finished-at="2021-03-26T04:56:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Mobile_App_Feedback_Positive_scenario -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.Mcd.qa.TestCases.Positive_Scenarios_All_Forms@10c46382]" name="tearDown" is-config="true" duration-ms="0" started-at="2021-03-26T04:56:30Z" finished-at="2021-03-26T04:56:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Mobile_App_Feedback_Positive_scenario status=SUCCESS method=Positive_Scenarios_All_Forms.Mobile_App_Feedback_Positive_scenario()[pri:3, instance:com.Mcd.qa.TestCases.Positive_Scenarios_All_Forms@10c46382] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="Franchising_Positive_Scenario()[pri:4, instance:com.Mcd.qa.TestCases.Positive_Scenarios_All_Forms@10c46382]" name="Franchising_Positive_Scenario" duration-ms="93347" started-at="2021-03-26T04:56:30Z" finished-at="2021-03-26T04:58:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Franchising_Positive_Scenario -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.Mcd.qa.TestCases.Positive_Scenarios_All_Forms@10c46382]" name="tearDown" is-config="true" duration-ms="1" started-at="2021-03-26T04:58:03Z" finished-at="2021-03-26T04:58:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Franchising_Positive_Scenario status=SUCCESS method=Positive_Scenarios_All_Forms.Franchising_Positive_Scenario()[pri:4, instance:com.Mcd.qa.TestCases.Positive_Scenarios_All_Forms@10c46382] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="Trademark_Permission_Positive_scenario()[pri:5, instance:com.Mcd.qa.TestCases.Positive_Scenarios_All_Forms@10c46382]" name="Trademark_Permission_Positive_scenario" duration-ms="97282" started-at="2021-03-26T04:58:03Z" finished-at="2021-03-26T04:59:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Trademark_Permission_Positive_scenario -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.Mcd.qa.TestCases.Positive_Scenarios_All_Forms@10c46382]" name="tearDown" is-config="true" duration-ms="0" started-at="2021-03-26T04:59:40Z" finished-at="2021-03-26T04:59:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Trademark_Permission_Positive_scenario status=SUCCESS method=Positive_Scenarios_All_Forms.Trademark_Permission_Positive_scenario()[pri:5, instance:com.Mcd.qa.TestCases.Positive_Scenarios_All_Forms@10c46382] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="CCPA_Mcdonald_May_positive_scenario()[pri:6, instance:com.Mcd.qa.TestCases.Positive_Scenarios_All_Forms@10c46382]" name="CCPA_Mcdonald_May_positive_scenario" duration-ms="59554" started-at="2021-03-26T04:59:40Z" finished-at="2021-03-26T05:00:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CCPA_Mcdonald_May_positive_scenario -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.Mcd.qa.TestCases.Positive_Scenarios_All_Forms@10c46382]" name="tearDown" is-config="true" duration-ms="0" started-at="2021-03-26T05:00:40Z" finished-at="2021-03-26T05:00:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=CCPA_Mcdonald_May_positive_scenario status=SUCCESS method=Positive_Scenarios_All_Forms.CCPA_Mcdonald_May_positive_scenario()[pri:6, instance:com.Mcd.qa.TestCases.Positive_Scenarios_All_Forms@10c46382] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="endreport()[pri:0, instance:com.Mcd.qa.TestCases.Positive_Scenarios_All_Forms@10c46382]" name="endreport" is-config="true" duration-ms="598" started-at="2021-03-26T05:00:40Z" finished-at="2021-03-26T05:00:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endreport -->
+      </class> <!-- com.Mcd.qa.TestCases.Positive_Scenarios_All_Forms -->
+    </test> <!-- Mcd -->
+  </suite> <!-- MCD -->
+</testng-results>

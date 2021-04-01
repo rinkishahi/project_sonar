@@ -1,0 +1,1256 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>Automation Report</title>
+
+	<style type='text/css'>
+	</style>
+</head>
+
+	<body class='extent dark default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>Regression testing</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Mar 19, 2021 04:00:37 PM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.5</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='50%'><span class='strong'>3</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='50%'>3</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='79.861%'><span class='strong'>115</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='20.139%'>29</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Restaurant_Feedback_Positive_scenario</span>
+						<span class='test-time'>Mar 19, 2021 04:00:46 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 19, 2021 04:00:46 PM</span>
+	<span class='label end-time'>Mar 19, 2021 04:03:33 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 47s+77ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:01:13 PM</td>
+					<td class='step-details'>TC:1 RESTAURANT URL IS OPENED</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:02:05 PM</td>
+					<td class='step-details'>TC:24.2 USERS NOT ABLE TO ENTER NUMERICALS AND DATE</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:02:06 PM</td>
+					<td class='step-details'>com.aventstack.extentreports.ExtentTest@3ad86dc0USERS NOT ABLE TO ENTER NUMERICALS</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:02:09 PM</td>
+					<td class='step-details'>TC:24.3 USERS NOT ABLE TO  ENTER CHARACTERS AND NUMERICALS</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:02:10 PM</td>
+					<td class='step-details'>com.aventstack.extentreports.ExtentTest@3ad86dc0USERS NOT ABLE TO  ENTER CHARACTERS AND NUMERICALS</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:02:13 PM</td>
+					<td class='step-details'>TC:25.4 USER ABLE TO SELECT DROP DOWN VALUE OF AM/PM FUNCTION</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:02:17 PM</td>
+					<td class='step-details'>TC:26.3 'HOW DID YOU PLACE YOUR ORDER' DROP DOWN IS WORKING</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:02:20 PM</td>
+					<td class='step-details'>TC:27.3 'HOW DID YOU PICK YOUR ORDER' DROP DOWN IS WORKING</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:02:23 PM</td>
+					<td class='step-details'>TC:29.4 USE SHOUL BE SEND  NUMARICAL AND  CHARACTER IN COMMENT TEXT</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:02:26 PM</td>
+					<td class='step-details'>TC:31.5  USE SHOULD BE SEND CHARACTERS IN FIRSTNAME TEXTBOX</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:02:26 PM</td>
+					<td class='step-details'>com.aventstack.extentreports.ExtentTest@3ad86dc0USE SHOULD  BE SEND CHARACTERS IN FIRSTNAME TEXTBOX</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:02:28 PM</td>
+					<td class='step-details'>TC:32.5 USER SHOULD  SEND CHARACTERS IN LASTNAME SECTION</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:02:29 PM</td>
+					<td class='step-details'>com.aventstack.extentreports.ExtentTest@3ad86dc0USER SHOULD  BE SEND CHARACTERS IN LASTNAME SECTION</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:02:31 PM</td>
+					<td class='step-details'>TC:33.5 USER SHOULD SEND MAIL WITH FORMAT IN MAIL TEXTBOX</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:02:32 PM</td>
+					<td class='step-details'>com.aventstack.extentreports.ExtentTest@3ad86dc0USER SHOULD SEND MAIL WITH FORMAT IN MAIL TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:02:34 PM</td>
+					<td class='step-details'>TC:34.4  USER ABLE TO SEND MAIL IN CONFIRM MAIL SECTION</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:02:37 PM</td>
+					<td class='step-details'>TC:35.6 USER SHOULD  SEND 10 NUMERICAL ONLY IN PHONE NUMBER SECTION</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:02:37 PM</td>
+					<td class='step-details'>com.aventstack.extentreports.ExtentTest@3ad86dc0USER SHOULD SEND 10 NUMERICAL ONLY IN PHONE NUMBER SECTION</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:02:40 PM</td>
+					<td class='step-details'>TC:37.3 USER NOT ABLE TO SELECT 'YES' RADIO BUTTON</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:02:40 PM</td>
+					<td class='step-details'>com.aventstack.extentreports.ExtentTest@3ad86dc0USER NOT ABLE TO SELECT 'YES' RADIO BUTTON</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:02:40 PM</td>
+					<td class='step-details'>Error:element not interactable
+  (Session info: headless chrome=89.0.4389.82)
+Build info: version: '4.0.0-alpha-4', revision: 'c2d955b49e'
+System info: host: 'LIN80016088', ip: '172.31.240.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\Users\rshahi\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51066}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: aa92816f2cd41e3013225b90a3cd77aa</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:02:40 PM</td>
+					<td class='step-details'>Error:element not interactable
+  (Session info: headless chrome=89.0.4389.82)
+Build info: version: '4.0.0-alpha-4', revision: 'c2d955b49e'
+System info: host: 'LIN80016088', ip: '172.31.240.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\Users\rshahi\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51066}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: aa92816f2cd41e3013225b90a3cd77aa</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:02:40 PM</td>
+					<td class='step-details'>Error:element not interactable
+  (Session info: headless chrome=89.0.4389.82)
+Build info: version: '4.0.0-alpha-4', revision: 'c2d955b49e'
+System info: host: 'LIN80016088', ip: '172.31.240.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\Users\rshahi\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51066}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: aa92816f2cd41e3013225b90a3cd77aa</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:03:21 PM</td>
+					<td class='step-details'>Error:element not interactable: [object HTMLSelectElement] has no size and location
+  (Session info: headless chrome=89.0.4389.82)
+Build info: version: '4.0.0-alpha-4', revision: 'c2d955b49e'
+System info: host: 'LIN80016088', ip: '172.31.240.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\Users\rshahi\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51066}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: aa92816f2cd41e3013225b90a3cd77aa</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:03:21 PM</td>
+					<td class='step-details'>Error:element not interactable
+  (Session info: headless chrome=89.0.4389.82)
+Build info: version: '4.0.0-alpha-4', revision: 'c2d955b49e'
+System info: host: 'LIN80016088', ip: '172.31.240.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\Users\rshahi\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51066}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: aa92816f2cd41e3013225b90a3cd77aa</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:03:33 PM</td>
+					<td class='step-details'>TC:1 RESTAURANT FEEDBACK FORM IS NOT SUBMITTED SUCCESSFULLY</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:03:33 PM</td>
+					<td class='step-details'>com.aventstack.extentreports.ExtentTest@3ad86dc0RESTAURANT FEEDBACK FORM IS NOT SUBMITTED SUCCESSFULLY</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:03:33 PM</td>
+					<td class='step-details'>Test Case PASSED IS Restaurant_Feedback_Positive_scenario</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+							<ul class='screenshots'>
+								<li><img data-featherlight='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20210219040205.png' width='10%' src='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20210219040205.png' data-src='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20210219040205.png'></li>
+								<li><img data-featherlight='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20210219040209.png' width='10%' src='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20210219040209.png' data-src='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20210219040209.png'></li>
+								<li><img data-featherlight='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20210219040226.png' width='10%' src='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20210219040226.png' data-src='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20210219040226.png'></li>
+								<li><img data-featherlight='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20210219040228.png' width='10%' src='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20210219040228.png' data-src='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20210219040228.png'></li>
+								<li><img data-featherlight='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20210219040231.png' width='10%' src='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20210219040231.png' data-src='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20210219040231.png'></li>
+								<li><img data-featherlight='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20210219040237.png' width='10%' src='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20210219040237.png' data-src='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20210219040237.png'></li>
+								<li><img data-featherlight='C:\automation_us\dep\dep/Screenshots/Resraurant_feedback20210219040240.png' width='10%' src='C:\automation_us\dep\dep/Screenshots/Resraurant_feedback20210219040240.png' data-src='C:\automation_us\dep\dep/Screenshots/Resraurant_feedback20210219040240.png'></li>
+								<li><img data-featherlight='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20210319040333.png' width='10%' src='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20210319040333.png' data-src='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20210319040333.png'></li>
+							</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>General_Enquire_Positive_scenario</span>
+						<span class='test-time'>Mar 19, 2021 04:03:33 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 19, 2021 04:03:33 PM</span>
+	<span class='label end-time'>Mar 19, 2021 04:04:34 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 0s+911ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:03:44 PM</td>
+					<td class='step-details'>TC:1 URL IS OPENED</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:03:48 PM</td>
+					<td class='step-details'>TC:16.1 THE TEXT 'PLEASE SELECT ANY ONE OPTION' DROP DOWN IS WORKING</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:03:50 PM</td>
+					<td class='step-details'>TC:18 USE ABLE TO SEND NUMERICAL IN COMMENT TEXT</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:03:53 PM</td>
+					<td class='step-details'>TC:20  CHARACTERS VALUE IS ENTERED IN FIRSTNAME TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:03:55 PM</td>
+					<td class='step-details'>TC:21 CHARACTERS VALUE IS ENTERED IN LASTNAME TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:03:58 PM</td>
+					<td class='step-details'>TC:22 CHARACTERS VALUE IS ENTERED IN ADDRESS TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:04:01 PM</td>
+					<td class='step-details'>TC:23 CHARACTERS AND NUMERICAL ABLE TO ENTERED IN APT/SUITE TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:04:03 PM</td>
+					<td class='step-details'>TC:24 CHARACTER VALUE IS ENTERED IN CITY TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:04:07 PM</td>
+					<td class='step-details'>TC:25 STEATE DROP DOWN  IS WORKING</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:04:10 PM</td>
+					<td class='step-details'>TC:26  USER SHOULD BE SEND 5 NUMBERS ONLY ON ZIP FUNCTION</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:04:12 PM</td>
+					<td class='step-details'>TC:27 USER ABEL TO SEND MAIL FORMAT IN MAIL TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:04:15 PM</td>
+					<td class='step-details'>TC:28  MAIL ID IS SEND IN CONFIRM MAIL TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:04:18 PM</td>
+					<td class='step-details'>TC:29 USER SHOUND BE SEND NUMERICAL VALUE IN PHONE NUMBER TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:04:34 PM</td>
+					<td class='step-details'>TC: SUBMIT BUTTON IS WORKING FINE AND ENABEL</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:04:34 PM</td>
+					<td class='step-details'>TC: GENERAL ENQUIRE FORM IS SUBMITTED SUCCESSFULLY</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:04:34 PM</td>
+					<td class='step-details'>Test Case PASSED IS General_Enquire_Positive_scenario</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>Mobile_App_Feedback_Positive_scenario</span>
+						<span class='test-time'>Mar 19, 2021 04:04:34 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 19, 2021 04:04:34 PM</span>
+	<span class='label end-time'>Mar 19, 2021 04:05:58 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 23s+303ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:04:39 PM</td>
+					<td class='step-details'>------ MOBILE APP FEEDBACK POSITIVE SCENARIOS-----</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:04:39 PM</td>
+					<td class='step-details'>TC:1 URL IS OPENED</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:04:48 PM</td>
+					<td class='step-details'>TC:16 MOBILE DEVICE TYPE SHOULD BE DROP DOWN AND CLICKABLE</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:04:51 PM</td>
+					<td class='step-details'>TC:17 MOBILE OPERATION SYSTEM SHOULD BE DROP DOWN AND CLICKABLE</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:04:54 PM</td>
+					<td class='step-details'>TC:18 USER SHOULD  BE SEND NUMERICAL AND CHARACTER</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:04:57 PM</td>
+					<td class='step-details'>TC:19 USER SHOULD  BE SEND NUMERICAL AND CHARACTER</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:05:02 PM</td>
+					<td class='step-details'>TC:29 USER SHOULD BE SEND NUMERICAL AND CHARACTERS</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:05:05 PM</td>
+					<td class='step-details'>TC:30 USER SHOULD BE SEND CHARACTERS</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:05:08 PM</td>
+					<td class='step-details'>TC:31 STATE FUNCTION SHOULD BE CLICKABLE</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:05:10 PM</td>
+					<td class='step-details'>TC:19 USER SHOULD NOT BE SEND CHARACTERS IN POPULAR LAND MARK...TEXT</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:05:14 PM</td>
+					<td class='step-details'>TC:21 MONTH FUNCTION SHOULD BE CLICKABLE</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:05:18 PM</td>
+					<td class='step-details'>TC:35 DAY DROP DOWN FUNCTION SHOULD BE CLICKABLE</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:05:21 PM</td>
+					<td class='step-details'>TC:35 YEAR DROP DOWN FUNCTION SHOULD BE CLICKABLE</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:05:25 PM</td>
+					<td class='step-details'>TC:39 TIME FUNCTION SHOULD BE CLICKABLE</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:05:28 PM</td>
+					<td class='step-details'>TC:40 AM/PM FUNCTION SHOULD BE CLICKABLE</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:05:31 PM</td>
+					<td class='step-details'>TC:41 DRIVE THRU TADIO BUTTON SHOULD BE CLICKABLE</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:05:33 PM</td>
+					<td class='step-details'>TC:46  USE SHOULD  BE SEND CHARACTERS  IN FIRSTNAME TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:05:35 PM</td>
+					<td class='step-details'>TC:47 USER SHOULD BE SEND CHARACTERS IN LASTNAME TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:05:38 PM</td>
+					<td class='step-details'>TC:33.5  USER ABEL TO SEND MAIL FORMAT IN MAIL TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:05:41 PM</td>
+					<td class='step-details'>TC:55  USER SHOULD SEND MAIL IN CONFIRM MAIL TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:05:43 PM</td>
+					<td class='step-details'>TC:56 USER SHOULD  SEND 10 NUMERICAL IN PHONE NUMBER TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:05:58 PM</td>
+					<td class='step-details'>TC: SUBMIT BUTTON IS WORKING FINE AND ENABEL</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:05:58 PM</td>
+					<td class='step-details'>TC: MOBILE APP FEEDBACK FORM IS SUBMITTED SUCCESSFULLY</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:05:58 PM</td>
+					<td class='step-details'>Test Case PASSED IS Mobile_App_Feedback_Positive_scenario</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>Franchising_Positive_Scenario</span>
+						<span class='test-time'>Mar 19, 2021 04:05:58 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 19, 2021 04:05:58 PM</span>
+	<span class='label end-time'>Mar 19, 2021 04:07:38 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 40s+229ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:06:02 PM</td>
+					<td class='step-details'>------- FRANCHISING FORM POSITIVE SCENARIOS--------</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:06:02 PM</td>
+					<td class='step-details'>TC:1 URL IS OPENED</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:06:10 PM</td>
+					<td class='step-details'>TC:9  USE SHOULD  BE SEND CHARACTERS  IN FIRSTNAME FUNCTION</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:06:12 PM</td>
+					<td class='step-details'>TC:10 USER SHOULD BE SEND CHARACTERS IN LASTNAME FUNCTION</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:06:15 PM</td>
+					<td class='step-details'>TC:11 USER SHOULD  SEND 10 NUMERICAL IN PHONE NUMBER FUNCTION</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:06:18 PM</td>
+					<td class='step-details'>TC:12  USER ABEL TO SEND MAIL FORMAT IN MAIL TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:06:20 PM</td>
+					<td class='step-details'>TC:13 USER SHOULD  SEND NUMARICAL AND CHARACTERS IN ADDRESS FUNCTION</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:06:23 PM</td>
+					<td class='step-details'>TC:14 USER SHOULD  SEND CHARACTERS IN CITY FUNCTION</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:06:23 PM</td>
+					<td class='step-details'>Error:element not interactable: [object HTMLDivElement] has no size and location
+  (Session info: headless chrome=89.0.4389.82)
+Build info: version: '4.0.0-alpha-4', revision: 'c2d955b49e'
+System info: host: 'LIN80016088', ip: '172.31.240.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\Users\rshahi\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51066}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: aa92816f2cd41e3013225b90a3cd77aa</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:06:25 PM</td>
+					<td class='step-details'>TC:16 USER SHOULD ENTERD NUMERICAL IN ZIP TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:06:28 PM</td>
+					<td class='step-details'>TC:17 USER SHOULD BE ENTERD CHARECTERS, SPECEAL CHARECTERS, NUMERICAL AND SPACE ALSO IN HAVE YOU EVER BEEN.. FUNCTION</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:06:30 PM</td>
+					<td class='step-details'>TC:18 USER SHOULD BE ENTERD CHARECTERS, SPECEAL CHARECTERS, NUMERICAL AND SPACE ALSO IN HAVE YOU OR YOUR.. FUNCTION</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:06:33 PM</td>
+					<td class='step-details'>TC:19 YES RADIO BUTTON SHOULD BE CLICKABLE</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:06:35 PM</td>
+					<td class='step-details'>TC:20 NO RADIO BUTTON SHOULD BE CLICKABLE</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:06:35 PM</td>
+					<td class='step-details'>Error:element not interactable: [object HTMLDivElement] has no size and location
+  (Session info: headless chrome=89.0.4389.82)
+Build info: version: '4.0.0-alpha-4', revision: 'c2d955b49e'
+System info: host: 'LIN80016088', ip: '172.31.240.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\Users\rshahi\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51066}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: aa92816f2cd41e3013225b90a3cd77aa</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:06:38 PM</td>
+					<td class='step-details'>TC:26 USER SHOULD BE SEND ALL CHARACTERS IN 'OCCUPATIONAL FIELD ' FUNCTION</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:06:41 PM</td>
+					<td class='step-details'>TC:27 USER SHOULD BE SEND  ALL CHARACTERS IN 'POSITION HELP ' FUNCTION</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:06:43 PM</td>
+					<td class='step-details'>TC:28 USER SHOULD BE SEND  ALL CHARACTERS IN 'COMPANY NAME ' FUNCTION</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:06:46 PM</td>
+					<td class='step-details'>TC:29 USER SHOULD BE SEND  ALL CHARACTERS IN 'DESCRIBE DETIES, NUMBER OF EMPLOYEES.... ' FUNCTION</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:06:48 PM</td>
+					<td class='step-details'>TC:31 USER SHOULD BE SEND  ALL CHARACTERS IN 'HAVE YOU EVER OWNED YOUR OWN BUSINESS.... ' FUNCTION</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:06:51 PM</td>
+					<td class='step-details'>TC:32 USER SHOULD BE SEND  ALL CHARACTERS IN 'HAVE YOU EVER HAD A BUSINESS FAILURE.. ' FUNCTION</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:06:53 PM</td>
+					<td class='step-details'>TC:33 USER SHOULD BE SEND  NUMARICAL IN 'TOTAL ASSETS (IN US $)' FUNCTION</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:06:56 PM</td>
+					<td class='step-details'>TC:34 USER SHOULD BE SEND  NUMARICAL IN 'TOTAL DEBT (IN US $) ' FUNCTION</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:06:56 PM</td>
+					<td class='step-details'>Error:element not interactable: [object HTMLDivElement] has no size and location
+  (Session info: headless chrome=89.0.4389.82)
+Build info: version: '4.0.0-alpha-4', revision: 'c2d955b49e'
+System info: host: 'LIN80016088', ip: '172.31.240.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\Users\rshahi\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51066}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: aa92816f2cd41e3013225b90a3cd77aa</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:06:59 PM</td>
+					<td class='step-details'>TC:37 YES RADIO BUTTON SHOULD BE CLICKABLE ON ARE YOU LELATED BY BLOOD OR MARRIAGE TO ANY OFFICER OF McDONALD'S USA, LLC</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:07:02 PM</td>
+					<td class='step-details'>TC:41 YES RADIO BUTTON SHOULD BE CLICKABLE ON ARE YOU RELATED BY BLOOD OR MARRIAGE TO ANY OWNER OF A McDONALD'S FRANCHISE.</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:07:05 PM</td>
+					<td class='step-details'>TC:41 YES RADIO BUTTON SHOULD BE CLICKABLE ON ARE YOU OR YOUR EMPLOYER PROVIDING PRODUCTS, GOODS OR SERVICES TO McDONALD'S OR FRANCHISEES.</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:07:11 PM</td>
+					<td class='step-details'>TC:42 FULL TIME RADIO BUTTON SHOULD BE CLICKABLE ON HOW MUCH TIME WILL YOU DEVOTE TO THIS BUSINESS..</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:07:15 PM</td>
+					<td class='step-details'>TC:43 YES RADIO BUTTON SHOULD BE CLICKABLE ON WOULD YOU BE WILLING TO RELOCATE FOR A RESTAURANT OPPORTUNITY?..</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:07:18 PM</td>
+					<td class='step-details'>TC:44 CHECK BOX SHOULD BE CLICKABLE  IN RURAL (POPULATION 0-2,500)</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:07:20 PM</td>
+					<td class='step-details'>TC:45 USER SHOULD BE SEND ALL CHARACTERS, SPECIAL CHARACTERS AND NUMARICAL IN 'ENTER PREFERRED REGION ' FUNCTION</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:07:23 PM</td>
+					<td class='step-details'>TC:46 USER SHOULD BE SEND ALL CHARACTERS, SPECIAL CHARACTERS AND NUMARICAL IN 'HAVE YOU EVER APPLIED FOR A McDONALD'S FRANCHISE...' FUNCTION</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:07:26 PM</td>
+					<td class='step-details'>TC:47 RADIO BUTTON SHOULD BE CLICKABLE IN ONLINE/WEBSITE FUNCTION</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:07:28 PM</td>
+					<td class='step-details'>TC:48 CHECK BOX SHOULD BE CLICKABLE IN 'I AGREE' FUNCTION</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:07:38 PM</td>
+					<td class='step-details'>TC:48 THANKS TEST PAGE OF FRANCHISIING FORM IS NOT WORKING</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:07:38 PM</td>
+					<td class='step-details'>com.aventstack.extentreports.ExtentTest@54be0fabTHANKS TEST PAGE OF FRANCHISIING FORM IS NOT WORKING</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:07:38 PM</td>
+					<td class='step-details'>Test Case PASSED IS Franchising_Positive_Scenario</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+							<ul class='screenshots'>
+								<li><img data-featherlight='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20210719040738.png' width='10%' src='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20210719040738.png' data-src='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20210719040738.png'></li>
+							</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>Trademark_Permission_Positive_scenario</span>
+						<span class='test-time'>Mar 19, 2021 04:07:38 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 19, 2021 04:07:38 PM</span>
+	<span class='label end-time'>Mar 19, 2021 04:09:08 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 29s+993ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:07:46 PM</td>
+					<td class='step-details'>TC:1 URL IS OPENED</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:07:53 PM</td>
+					<td class='step-details'>TC:15 PLEASE SELECT ANY ONE OPTION DROP DOWN FUNCTION IS CLICKABLE</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:07:56 PM</td>
+					<td class='step-details'>TC:17 USER SHOULD  BE SEND NUMERICAL AND CHARACTER ON FUNCTION OF ENTER YOU COMMENTS</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:07:58 PM</td>
+					<td class='step-details'>TC:18 USER SHOULD BE SEND SPECIAL CHARACTER, CHARACTER AND NUMERICAL ON HOW WILL IT BE USED FUNCTION</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:08:01 PM</td>
+					<td class='step-details'>TC:19 USER SHOULD BE SEND SPECIAL CHARACTER, CHARACTER AND NUMERICAL ON WHAT IS INTENTED AUDIENCE</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:08:03 PM</td>
+					<td class='step-details'>TC:20 USER SHOULD BE SEND SPECIAL CHARACTER, CHARACTER AND NUMERICAL ON HOW LONG WILL IT BE USED</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:08:06 PM</td>
+					<td class='step-details'>TC:21 YES TADIO BUTTON SHOULD BE CLICKABLE</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:08:09 PM</td>
+					<td class='step-details'>TC:23 USER SHOULD BE SELECT DROP DOWN VALUE IN MONT FUNTION</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:08:13 PM</td>
+					<td class='step-details'>TC:24 DAY FUNCTION IS CLICKABLE</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:08:16 PM</td>
+					<td class='step-details'>TC:25 YEAR FUNCTION IS CLICKABLE</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:08:19 PM</td>
+					<td class='step-details'>TC:26 GRANTED RADIO BUTTON SHOULD BE CLICKABLE</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:08:21 PM</td>
+					<td class='step-details'>TC:28 USER SHOULD BE SEND SPECIAL CHARACTER, CHARACTER AND NUMERICAL ON AUTHOR FUNCTION</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:08:24 PM</td>
+					<td class='step-details'>TC:29 USER SHOULD BE SEND SPECIAL CHARACTER, CHARACTER AND NUMERICAL ON PUBLISHER FUNCTION</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:08:26 PM</td>
+					<td class='step-details'>TC:30 USER SHOULD BE SEND SPECIAL CHARACTER, CHARACTER AND NUMERICAL ON PUBLICATION FUNCTION</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:08:29 PM</td>
+					<td class='step-details'>TC:40  USE SHOULD  BE SEND CHARACTERS  IN FIRSTNAME TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:08:32 PM</td>
+					<td class='step-details'>TC:41 USER SHOULD BE SEND CHARACTERS IN LASTNAME TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:08:34 PM</td>
+					<td class='step-details'>TC:42 USER SHOULD  SEND NUMARICAL AND CHARACTERS IN ADDRESS TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:08:37 PM</td>
+					<td class='step-details'>TC:43 USER SHOULD SEND NUMARICAL AND CHARACTERS IN APT/SUITE TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:08:39 PM</td>
+					<td class='step-details'>TC:44 USER SHOULD  SEND CHARACTERS IN CITY TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:08:43 PM</td>
+					<td class='step-details'>TC:45 USER SHOULD BE SELECTED STATE DROP DOWN VALUE</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:08:45 PM</td>
+					<td class='step-details'>TC:46 USER SHOULD ENTERD NUMERICAL IN ZIP TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:08:48 PM</td>
+					<td class='step-details'>TC:47  USER ABEL TO SEND MAIL FORMAT IN MAIL TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:08:51 PM</td>
+					<td class='step-details'>TC:48  USER SHOULD SEND MAIL IN CONFIRM MAIL TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:08:53 PM</td>
+					<td class='step-details'>TC:49 USER SHOULD  SEND 10 NUMERICAL IN PHONE NUMBER TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:09:08 PM</td>
+					<td class='step-details'>TC: SUBMIT BUTTON IS WORKING FINE AND ENABEL</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:09:08 PM</td>
+					<td class='step-details'>TC: MOBILE APP FEEDBACK FORM IS SUBMITTED SUCCESSFULLY</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:09:08 PM</td>
+					<td class='step-details'>Test Case PASSED IS Trademark_Permission_Positive_scenario</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='6'>
+					<div class='test-heading'>
+						<span class='test-name'>CCPA_Mcdonald_May_positive_scenario</span>
+						<span class='test-time'>Mar 19, 2021 04:09:08 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 19, 2021 04:09:08 PM</span>
+	<span class='label end-time'>Mar 19, 2021 04:10:06 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 57s+731ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:09:12 PM</td>
+					<td class='step-details'>----- CCPA McDONALD MAY NOT SELL POSITIVE SCENARIOS------</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:09:12 PM</td>
+					<td class='step-details'>TC:1 URL OF CCPA IS OPENED</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:09:18 PM</td>
+					<td class='step-details'>TC:7.4  CHARACTERS VALUE SHOULD  ENTERED IN FIRSTNAME TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:09:21 PM</td>
+					<td class='step-details'>TC:8.4 CHARACTERS VALUE SHOULD ENTERED IN LASTNAME TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:09:23 PM</td>
+					<td class='step-details'>TC:9.4 USER ABEL TO SEND MAIL FORMAT IN MAIL TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:09:26 PM</td>
+					<td class='step-details'>TC:10.4  MAIL ID IS SEND ON CONFIRM MAIL TEXTBOX</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:09:26 PM</td>
+					<td class='step-details'>Error:element not interactable: [object HTMLDivElement] has no size and location
+  (Session info: headless chrome=89.0.4389.82)
+Build info: version: '4.0.0-alpha-4', revision: 'c2d955b49e'
+System info: host: 'LIN80016088', ip: '172.31.240.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\Users\rshahi\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51066}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: aa92816f2cd41e3013225b90a3cd77aa</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:09:28 PM</td>
+					<td class='step-details'>TC:12.2 USER SHOUND BE SEND NUMERICAL VALUE IN PHONE NUMBER TEXTBOX</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:09:31 PM</td>
+					<td class='step-details'>TC:13.7 'McDONALD'S MAY NOT SELL..'  RADIO BUTTON SHOULD BE CLICKABLE</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:10:05 PM</td>
+					<td class='step-details'>TC:  CCPA FORM IS NOT SUBMITTED SUCCESSFULLY</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:10:06 PM</td>
+					<td class='step-details'>com.aventstack.extentreports.ExtentTest@673e67bd CCPA FORM IS NOT SUBMITTED SUCCESSFULLY</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:10:06 PM</td>
+					<td class='step-details'>Test Case PASSED IS CCPA_Mcdonald_May_positive_scenario</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+							<ul class='screenshots'>
+								<li><img data-featherlight='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20211019041005.png' width='10%' src='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20211019041005.png' data-src='C:\automation_us\dep\dep/Screenshots/Positive_Scenarios_All_Forms20211019041005.png'></li>
+							</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<!-- category view -->
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>6</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>144</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Mar 19, 2021 04:00:37 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Mar 19, 2021 04:10:06 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 9m 28s+57ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>Hostname</td>
+								<td>LocalHost</td>
+							</tr>
+							<tr>
+								<td>OS</td>
+								<td>Window10</td>
+							</tr>
+							<tr>
+								<td>Tester Name</td>
+								<td>Chandana</td>
+							</tr>
+							<tr>
+								<td>Browser</td>
+								<td>Chrome</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 3,
+				failParent: 3,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 3,
+				
+				passChild: 115,
+				failChild: 29,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				exceptionsChild: 29,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 		</script>
+	</body>
+	
+</html>

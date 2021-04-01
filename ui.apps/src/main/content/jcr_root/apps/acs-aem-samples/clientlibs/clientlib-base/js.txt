@@ -1,3 +1,0 @@
-#base=.
-
-# This file must exist for the clientlib to respond to the JS client library request
