@@ -5,19 +5,19 @@
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="com.Mcd.qa.TestCases.Positive_Scenarios_All_Forms">
-		 <!--  <methods>
+		  <methods>
 			     <include name="Restaurant_Feedback_Positive_scenario" /> 
  				 <include name="General_Enquire_Positive_scenario" /> 
-			<include name="Mobile_App_Feedback_Positive_scenario" />
+			 <!--<include name="Mobile_App_Feedback_Positive_scenario" />
 						 <include name="Franchising_Positive_Scenario" />   
 				  <include name="Trademark_Permission_Positive_scenario" />
 				  <include name="CCPA_Mcdonald_May_positive_scenario" />
 				   <include name="old_Restaurant_Feedback_Form_Positive_scenario" />   
 				       
 				     <include name="Open_URLR" /> 
-				      <include name="Please_Indicate_Whether_You" /> 
+				      <include name="Please_Indicate_Whether_You" /> -->
 				  
-				</methods>     -->
+				</methods>     
 			</class>
 		</classes>
 	</test>
